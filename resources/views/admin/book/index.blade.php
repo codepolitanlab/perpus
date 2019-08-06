@@ -4,7 +4,7 @@
 <div class="box">
     <div class="box-header">
         <h3 class="box-title">Data Penulis</h3>
-        <a href="{{ route('admin.author.create') }}" class="btn btn-primary">Tambah Penulis</a>
+        <a href="{{ route('admin.book.create') }}" class="btn btn-primary">Tambah Buku</a>
     </div>
 
     <div class="box-body">
@@ -31,7 +31,13 @@
 </form>
 @endsection
 
+@push('styles')
+<link rel="stylesheet" href="{{ asset('assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
+@endpush
+
 @push('scripts')
+    <script src="{{ asset('assets/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/bs-notify.min.js') }}"></script>
     @include('admin.templates.partials.alerts')
     <script>
