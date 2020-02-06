@@ -14,6 +14,7 @@ class BookController extends Controller
         $books = Book::paginate(10);
 
         return view('frontend.book.index', [
+            'title' => 'Beranda Perpusku',
             'books' => $books,
         ]);
     }
@@ -21,6 +22,7 @@ class BookController extends Controller
     public function show(Book $book)
     {
         return view('frontend.book.show', [
+            'title' => $book->title,
             'book' => $book,
         ]);
     }
